@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="freeter-api">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/"/>
+        <dependent-module archiveName="j2cache-spring-boot2-starter-2.3.21-release.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/j2cache-spring-boot2-starter/j2cache-spring-boot2-starter">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="j2cache-core-2.3.21-release.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/j2cache-core/j2cache-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/renren-api/target/classes"/>
+        <property name="context-root" value="freeter-api"/>
+    </wb-module>
+</project-modules>
