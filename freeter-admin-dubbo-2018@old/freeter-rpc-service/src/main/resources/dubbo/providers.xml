@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 配置可参考 http://dubbo.io/User+Guide-zh.htm -->
+    <dubbo:provider filter="providerFilter" />
+    
+    
+    <!-- 服务提供方应用名，用于计算依赖关系 -->
+    <dubbo:application name="${dubbo.application.name}" owner="${dubbo.application.owner}"/>
+    <!-- 定义 zookeeper 注册中心地址及协议 -->
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" client="zkclient"/>
+    <!-- 定义 Dubbo 协议名称及使用的端口，dubbo 协议缺省端口为 20880，如果配置为 -1 或者没有配置 port，则会分配一个没有被占用的端口 -->
+    <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"/>
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.freeter.modules.sys.service.AddressService" ref="addressService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysConfigService" ref="sysConfigService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysDeptService" ref="sysDeptService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysDictService" ref="sysDictService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysLogService" ref="sysLogService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysMenuService" ref="sysMenuService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysRoleDeptService" ref="sysRoleDeptService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysRoleMenuService" ref="sysRoleMenuService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysRoleService" ref="sysRoleService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysUserRoleService" ref="sysUserRoleService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.sys.service.SysUserService" ref="sysUserService" timeout="10000"/>
+    
+    <dubbo:service interface="com.freeter.modules.good.service.CategoryGoodService" ref="categoryGoodService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.CategoryService" ref="categoryService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.CategorySpecService" ref="categorySpecService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.ChannelService" ref="channelService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.GoodDetailService" ref="goodDetailService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.GoodAttributeService" ref="goodAttributeService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.GoodImageService" ref="goodImageService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.GoodParameterService" ref="goodParameterService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.GoodService" ref="goodService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.GoodSpecPriceService" ref="goodSpecPriceService" timeout="10000"/>
+    <dubbo:service interface="com.freeter.modules.good.service.GoodSpecValueService" ref="goodSpecValueService" timeout="10000"/>
+    
+     <dubbo:service interface="com.freeter.modules.user.service.UserService" ref="userService" timeout="10000"/>
+    
+    
+</beans>
